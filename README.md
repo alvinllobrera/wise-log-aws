@@ -1,6 +1,6 @@
 # WiseAppender - Logback AWS CloudWatch Appender
 
-WiseAppender is SLF4J writes directly into AWS CloudWatch using AWS SDK and CloudWatch API.
+WiseAppender is SLF4J appender that writes directly into AWS CloudWatch using AWS SDK and CloudWatch API.
 
 The library includes `LayoutEngineJson` that writes logging events in a structured way, as a JSON object. Logs can be
 browsed and filtered directly from the CloudWatch console.
