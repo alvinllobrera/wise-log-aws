@@ -18,7 +18,7 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.UnsynchronizedAppenderBase;
 
 /**
- * Appender used at wise-sites for critical level logging for alerts & monitoring services.
+ * Appender used at wise-sites for critical level logging for alerts and monitoring services.
  */
 public class WiseAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
