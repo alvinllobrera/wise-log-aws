@@ -95,7 +95,7 @@ dependencies {
 
 ### Configuring AWS and creating Credential Files
 
-Credentials are located under `~/.aws` folder in `credentials` file
+The standard AWS credentials SDK conventions are used.  For file based config, the `~/.aws` folder can provide the `credentials` file:
 
 ```
 cat ~/.aws/credentials
@@ -105,15 +105,16 @@ aws_secret_access_key=NjQmx8gR(...)
 ```
 See https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
 
-Additional CloudWatch region must be set:
+Additional CloudWatch region can be set in normal manner:
 ```
 cat ~/.aws/config
 [default]
 region=ap-southeast-1
-
 ```
 
-# JAR Shading
+The AWS library can also use environment variables and other config mechanisms.  Please refer to AWS SDK documentation in this regard for more information.
+
+# Shaded JAR
 
 WiseAppender library includes shaded jars in an isolated namespace `wise_repack.log.*` to reduce dependency conflicts with upstream libraries:
 - AWS SDK
