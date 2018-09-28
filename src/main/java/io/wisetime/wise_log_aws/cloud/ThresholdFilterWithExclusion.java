@@ -14,10 +14,10 @@ import ch.qos.logback.core.spi.FilterReply;
  *  When filter is enabled, you can define a minimum level,
  *  For example, if default logging set to INFO, but you want only WARN logging to cloud host BUT FOR (except) if package
  *  prefix was org.foo or org.bar, use:
- *    <filter class="io.wisetime.wise_log_aws.cloud.ThresholdFilterWithExclusion">
- *       <level>WARN</level>
- *       <excludedLogPrefixList>org.foo;org.bar</excludedLogPrefixList>
- *     </filter>
+ *    &lt;filter class="io.wisetime.wise_log_aws.cloud.ThresholdFilterWithExclusion"&gt;
+ *       &lt;level&gt;WARN&lt;/level&gt;
+ *       &lt;excludedLogPrefixList&gt;org.foo;org.bar&lt;/excludedLogPrefixList&gt;
+ *     &lt;/filter&gt;
  *  Separate items with ';' character.
  * </pre>
  */
