@@ -1,4 +1,4 @@
-# WiseAppender - SLF4J AWS CloudWatch Appender 
+# WiseAppender - Logback AWS CloudWatch Appender 
 
 WiseAppender is SLF4J writes directly into AWS CloudWatch using AWS SDK and CloudWatch API.
 
