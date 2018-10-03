@@ -59,6 +59,8 @@ dependencies {
 }
 
 ```
+Check the latest stable release on [Maven.org](https://search.maven.org/search?q=a:wise-log-aws)
+
 ## Configuring WiseTimeAppender
 
 `resources/logback.xml`
@@ -113,6 +115,15 @@ region=ap-southeast-1
 ```
 
 The AWS library can also use environment variables and other config mechanisms.  Please refer to AWS SDK documentation in this regard for more information.
+
+### Allowing WiseAppender to Send Logs to CloudWatch
+
+An environment variable `CLOUD_LOG_ENABLED` should be set to `true` to enable `WiseAppender`.
+
+For example in bash:
+```
+export CLOUD_LOG_ENABLED=true
+```
 
 # Shaded JAR
 
