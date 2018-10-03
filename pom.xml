@@ -19,6 +19,12 @@
     </licenses>
     <developers>
       <developer>
+        <name>Thomas Haines</name>
+        <email>thomas.haines@wisetime.io</email>
+        <organization>WiseTime</organization>
+        <organizationUrl>https://wisetime.io</organizationUrl>
+      </developer>
+      <developer>
         <name>Bartłomiej Mocior</name>
         <email>bartlomiej.mocior@wisetime.io</email>
         <organization>WiseTime</organization>
