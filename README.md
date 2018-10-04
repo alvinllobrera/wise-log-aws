@@ -80,10 +80,10 @@ Check the [latest stable release](https://search.maven.org/search?q=a:wise-log-a
     <!-- deny all events with a level below WARN, except for io.wisetime.* packages -->
     <filter class="io.wisetime.wise_log_aws.cloud.ThresholdFilterWithExclusion">
       <level>WARN</level>
-      <excludedLogPrefixList>io.wisetime.</excludedLogPrefixList>
+      <excludedLogPrefixList>io.mycompany.</excludedLogPrefixList>
     </filter>
     <moduleName>my-app-name</moduleName>
-    <logDefaultGroup>wise-prod</logDefaultGroup>
+    <logDefaultGroup>aws-group-i-created-goes-here</logDefaultGroup>
   </appender>
 
   <root level="INFO" additivity="false">
