@@ -58,7 +58,7 @@ dependencies {
 }
 
 ```
-Check the latest stable release on [Maven.org](https://search.maven.org/search?q=a:wise-log-aws)
+Check the [latest stable release](https://search.maven.org/search?q=a:wise-log-aws) at Maven Central.
 
 ## Configuring WiseTimeAppender
 
