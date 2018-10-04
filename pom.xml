@@ -4,7 +4,7 @@
     <groupId>io.wisetime</groupId>
     <artifactId>wise-log-aws</artifactId>
     <!-- note CI changes version for publish via mvn versions:set -DnewVersion=2.${buildNum} -->
-    <version>2.1.1</version>
+    <version>2.1.2</version>
     <packaging>jar</packaging>
 
     <name>WiseAppender</name>
@@ -62,10 +62,16 @@
             <version>${slf4j.version}</version>
         </dependency>
         <dependency>
+            <!-- required by AWS SDK -->
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
             <version>${slf4j.version}</version>
-            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <!-- required by AWS SDK -->
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -73,11 +79,7 @@
             <version>${slf4j.version}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency> <!-- required by AWS SDK -->
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
+
         <!-- shaded dependencies -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -179,11 +181,6 @@
             <version>1.11</version>
         </dependency>
         <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>2.9.9</version>
@@ -245,7 +242,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.2.0</version>
             </plugin>
         </plugins>
         <pluginManagement>
@@ -276,7 +273,7 @@
                                         <include>com.fasterxml.jackson.dataformat:*</include>
                                         <include>org.apache.httpcomponents:*</include>
                                         <include>software.amazon.ion:*</include>
-                                        <include>commons-logging:commons-logging</include>
+                                        <include>org.slf4j:jcl-over-slf4j</include>
                                     </includes>
                                 </artifactSet>
                                 <filters>
@@ -321,9 +318,9 @@
                     </executions>
                     <dependencies>
                       <dependency>
-                        <groupId>${groupId}</groupId>
-                        <artifactId>${artifactId}</artifactId>
-                        <version>${version}</version>
+                        <groupId>${project.groupId}</groupId>
+                        <artifactId>${project.artifactId}</artifactId>
+                        <version>${project.version}</version>
                   </dependency>
                   </dependencies>
                 </plugin>
