@@ -273,6 +273,7 @@
                                         <include>com.fasterxml.jackson.dataformat:*</include>
                                         <include>org.apache.httpcomponents:*</include>
                                         <include>software.amazon.ion:*</include>
+                                        <include>org.slf4j:jcl-over-slf4j</include>
                                     </includes>
                                 </artifactSet>
                                 <filters>
