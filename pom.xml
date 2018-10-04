@@ -242,7 +242,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.2.0</version>
             </plugin>
         </plugins>
         <pluginManagement>
@@ -318,9 +318,9 @@
                     </executions>
                     <dependencies>
                       <dependency>
-                        <groupId>${groupId}</groupId>
-                        <artifactId>${artifactId}</artifactId>
-                        <version>${version}</version>
+                        <groupId>${project.groupId}</groupId>
+                        <artifactId>${project.artifactId}</artifactId>
+                        <version>${project.version}</version>
                   </dependency>
                   </dependencies>
                 </plugin>
