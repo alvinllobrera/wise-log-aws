@@ -70,7 +70,7 @@ Check the [latest stable release](https://search.maven.org/search?q=a:wise-log-a
   <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
- ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <!-- uses PatternLayoutEncoder by default -->
     <encoder>
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </encoder>
