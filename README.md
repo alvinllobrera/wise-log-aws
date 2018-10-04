@@ -66,7 +66,7 @@ Check the [latest stable release](https://search.maven.org/search?q=a:wise-log-a
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
+  <!-- This is optional, but allows extra time for any pending log events to be sent to AWS Cloud Watch before JVM shutdown -->
   <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
