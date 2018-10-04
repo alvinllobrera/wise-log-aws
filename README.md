@@ -1,6 +1,6 @@
 # WiseAppender - Logback AWS CloudWatch Appender
 
-WiseAppender is SLF4J appender that writes directly into AWS CloudWatch using AWS SDK and CloudWatch API.
+WiseAppender is Logback appender that writes directly into AWS CloudWatch using AWS SDK and CloudWatch API.
 
 The library includes `LayoutEngineJson` that writes logging events in a structured way, as a JSON object. Logs can be
 browsed and filtered directly from the CloudWatch console.
@@ -10,10 +10,9 @@ See AWS Filtering
 
 ## Filtering log events, before writing to CloudWatch
 WiseAppender ships with `ThresholdFilterWithExclusion` - log events filter that gives ability to filter logs before
-they are consumed them by the appender.
+they are sent to AWS CloudWatch.
 
-For example, it's possible to set `ROOT` logger level to `INFO`, but pass all the events with level `WARN` to the
-`WiseAppender` except the events from loggers with defined prefix (`excludedLogPrefixList`). See the example:
+For example, it's possible to set `ROOT` logger level to `INFO`, but only allow log events with level `WARN` or above, to the `WiseAppender` but allow logs with a defined prefix (`excludedLogPrefixList`) to be excluded from the level filter application. See the example:
 
 ```
   <!-- deny all events with a level below WARN, except for io.wisetime.* packages -->
