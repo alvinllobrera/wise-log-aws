@@ -12,6 +12,7 @@ import com.amazonaws.services.logs.AWSLogsAsyncClientBuilder;
 import com.amazonaws.services.logs.model.CreateLogStreamRequest;
 import com.amazonaws.services.logs.model.InputLogEvent;
 import com.amazonaws.services.logs.model.PutLogEventsRequest;
+import com.amazonaws.services.logs.model.PutLogEventsResult;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
@@ -37,6 +38,12 @@ class CloudWriter {
   private final String logGroupName;
   private final String logStreamName;
   private final Map<String, String> configPropertyMap = new HashMap<>();
+  /**
+   * Today the basic structure of the PutLogEvents API is you do a call to PutLogEvents and it returns to you a result
+   * that includes the sequence number. That same sequence number must be used in the subsequent put for the same (log
+   * group, log stream) pair.
+   */
+  private String cloudWatchNextSequenceToken;
 
   private CloudWriter(ConfigPojo configPojo) {
 
@@ -123,13 +130,15 @@ class CloudWriter {
               .collect(Collectors.toList());
 
       // send sorted group to cloud watch
-      awsLog.putLogEvents(
+      PutLogEventsResult result = awsLog.putLogEvents(
           new PutLogEventsRequest()
               .withLogGroupName(logGroupName)
               .withLogStreamName(logStreamName)
-              .withLogEvents(eventListSorted));
+              .withLogEvents(eventListSorted)
+              .withSequenceToken(cloudWatchNextSequenceToken)
+      );
+      cloudWatchNextSequenceToken = result.getNextSequenceToken();
     }
-
     return limitReached.get();
   }
 
