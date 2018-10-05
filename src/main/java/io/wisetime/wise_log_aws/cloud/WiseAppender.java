@@ -50,6 +50,7 @@ public class WiseAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
       try {
         cloudWriter.processLogEntries();
       } catch (Exception e) {
+        System.err.println("AWS lib internal error " + e);
         addWarn("Internal error", e);
       }
     }
