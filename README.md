@@ -86,7 +86,8 @@ Check the [latest stable release](https://search.maven.org/search?q=a:wise-log-a
     <logDefaultGroup>aws-group-i-created-goes-here</logDefaultGroup>
   </appender>
 
-  <root level="INFO" additivity="false">
+  <root>
+    <level value="INFO"/>
     <appender-ref ref="STDOUT"/>
     <appender-ref ref="AWS_CLOUD"/>
   </root>
